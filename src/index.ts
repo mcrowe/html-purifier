@@ -54,6 +54,7 @@ export function select(html: string, selectorStrings: string[]): string {
     onclosetag(name: string) {
       if (isSkipped && (name == 'script' || name == 'style')) {
         isSkipped = false
+        return
       }
 
       if (level > 0) {

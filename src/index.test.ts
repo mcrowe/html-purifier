@@ -4,7 +4,7 @@ import { select } from './index'
 
 
 test('select', t => {
-  const html = '<body><div></div><div id="rank">def<span>abc</span>123</div><div><section>toy<img class="my-image" src="hello" /> 123 </section></div></body>'
+  const html = '<body><div></div><div id="rank">def<span>abc</span>123<script>def</script></div><div><section>toy<img class="my-image" src="hello" /> 123 </section></div></body>'
 
   const result = select(html, [
     '#rank',

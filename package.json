@@ -1,0 +1,32 @@
+{
+  "author": "Mitch Crowe <code@mitchcrowe.com> (http://www.mitchcrowe.com)",
+  "ava": {
+    "files": [
+      "lib/**/*.test.js"
+    ],
+    "verbose": true
+  },
+  "description": "Extract useful bits from huge html documents as fast as possible.",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.12",
+    "ava": "^0.21.0",
+    "typescript": "^2.4.2"
+  },
+  "files": [
+    "lib/"
+  ],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "name": "@mcrowe/html-purifier",
+  "repository": "https://github.com/mcrowe/html-purifier",
+  "scripts": {
+    "build": "tsc",
+    "test": "ava",
+    "watch": "tsc -w"
+  },
+  "typings": "lib/index",
+  "version": "0.0.1"
+}

@@ -1,1 +1,1 @@
-export declare function doSomething(a: number): number;
+export declare function select(html: string, selectorStrings: string[]): string;

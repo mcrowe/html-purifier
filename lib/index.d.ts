@@ -1,1 +1,1 @@
-export declare function select(html: string, selectorStrings: string[]): string;
+export declare function purify(html: string, selectorStrings: string[]): string;

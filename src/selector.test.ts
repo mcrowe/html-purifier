@@ -43,6 +43,15 @@ test('isMatch', t => {
 
   t.is(
     isMatch(
+      make('.blue'),
+      'div',
+      {}
+    ),
+    false
+  )
+
+  t.is(
+    isMatch(
       make('span#one'),
       'div',
       {id: 'one'}
@@ -55,6 +64,15 @@ test('isMatch', t => {
       make('#one.green'),
       'div',
       {id: 'one', class: 'green'}
+    ),
+    true
+  )
+
+  t.is(
+    isMatch(
+      make('#one.green'),
+      'div',
+      {id: 'one', class: 'blue green'}
     ),
     true
   )

@@ -36,7 +36,7 @@ export function isMatch(selector: ISelector, name: string, attr: any): boolean {
     return false
   }
 
-  if (selector.class && attr && selector.class != attr.class) {
+  if (selector.class && attr && (!attr.class || !attr.class.includes(selector.class))) {
     return false
   }
 

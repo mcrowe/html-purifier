@@ -9,20 +9,16 @@ Extract useful bits from huge html documents as fast as possible.
 ```js
 import HtmlPurifier from '@mcrowe/html-purifier'
 
-
 const html = '<body><div></div><div id="rank">def<span>abc</span><script></script>123</div><div><section>toy<img class="my-image" src="hello" /> 123 </section></div></body>'
 
-const result = select(html, {
-  include: [
-    '#rank',
-    '.my-image'
-  ],
-  exclude: [
-    'script'
-  ]
-)
+const result = HtmlPurifier.purify(html, [
+  '#rank',
+  '.my-image'
+])
 
-result === '<div id="rank">def<span>abc</span>123</div><img class="my-image" src="hello" />'
+assert(
+  result === '<div id="rank">def<span>abc</span>123</div><img class="my-image" src="hello" />'
+)
 ```
 
 ## Development

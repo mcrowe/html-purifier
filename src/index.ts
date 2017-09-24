@@ -8,7 +8,7 @@ const PARSER_OPTIONS = {
 }
 
 
-export function select(html: string, selectorStrings: string[]): string {
+export function purify(html: string, selectorStrings: string[]): string {
 
   const selectors = selectorStrings.map(Selector.make)
   const nonIdSelectors = selectors.filter(s => !s.id)

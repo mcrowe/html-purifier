@@ -1,5 +1,5 @@
 {
-  "author": "Rogelio Sevilla <rogelio.sevilla1@gmail.com>",
+  "author": "Mitch Crowe <code@mitchcrowe.com> (http://www.mitchcrowe.com)",
   "ava": {
     "files": [
       "lib/**/*.test.js"
@@ -20,8 +20,8 @@
   ],
   "license": "ISC",
   "main": "lib/index.js",
-  "name": "@raosev/html-purifier-tmp",
-  "repository": "https://github.com/raosev/html-purifier",
+  "name": "@mcrowe/html-purifier",
+  "repository": "https://github.com/mcrowe/html-purifier",
   "scripts": {
     "build": "tsc",
     "test": "ava",

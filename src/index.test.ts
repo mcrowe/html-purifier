@@ -13,7 +13,7 @@ test('purify', t => {
 
   t.is(
     result,
-    '<div id="rank">def<span>abc</span>123</div><img class="my-image" src="hello"></img>'
+    '<div id="rank">def<span>abc</span>123<script>def</script></div><img class="my-image" src="hello"></img>'
   )
 })
 

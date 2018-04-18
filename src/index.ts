@@ -21,28 +21,32 @@ export function purify(html: string, selectorStrings: string[]): string {
   const parser = new htmlparser.Parser({
 
     onopentag(name: string, attr: any) {
-      if (name == 'script' || name == 'style') {
+      if (name == 'style') {
+        console.log('style!!', name)
         isSkipped = true
         return
       }
 
       if (level > 0) {
+        console.log('level gt 0', name)
         level += 1
         body += Tag.toString(name, attr)
-
-      } else {
+        console.log('level gt 0 body is now!', body)
+        return
+      }
 
         const selectorsToCheck = !attr.id ? nonIdSelectors: selectors
+        // let tagUsed = false
 
         for (let i = 0; i < selectorsToCheck.length; i++) {
-          if (Selector.isMatch(selectorsToCheck[i], name, attr)) {
+          if (!Selector.isMatch(selectorsToCheck[i], name, attr)) continue
             level = 1
+            console.log('selector match!', selectorsToCheck[i])
+            console.log('match', name)
             body += Tag.toString(name, attr)
-            continue
-          }
+            console.log('body is now!', body)
         }
 
-      }
     },
 
     ontext(text: string) {
@@ -52,7 +56,7 @@ export function purify(html: string, selectorStrings: string[]): string {
     },
 
     onclosetag(name: string) {
-      if (isSkipped && (name == 'script' || name == 'style')) {
+      if (isSkipped && name == 'style') {
         isSkipped = false
         return
       }

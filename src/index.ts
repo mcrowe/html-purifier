@@ -22,29 +22,22 @@ export function purify(html: string, selectorStrings: string[]): string {
 
     onopentag(name: string, attr: any) {
       if (name == 'style') {
-        console.log('style!!', name)
         isSkipped = true
         return
       }
 
       if (level > 0) {
-        console.log('level gt 0', name)
         level += 1
         body += Tag.toString(name, attr)
-        console.log('level gt 0 body is now!', body)
         return
       }
 
         const selectorsToCheck = !attr.id ? nonIdSelectors: selectors
-        // let tagUsed = false
 
         for (let i = 0; i < selectorsToCheck.length; i++) {
           if (!Selector.isMatch(selectorsToCheck[i], name, attr)) continue
             level = 1
-            console.log('selector match!', selectorsToCheck[i])
-            console.log('match', name)
             body += Tag.toString(name, attr)
-            console.log('body is now!', body)
         }
 
     },
